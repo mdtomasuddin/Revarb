@@ -4,11 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ChatMessage extends Model
+class Message extends Model
 {
-    protected $guarded = ['id'];
-
-
+    protected $fillable = [
+        'sender_id',
+        'receiver_id',
+        'conversion_id',
+        'content',
+        'is_read'
+    ];
 
     public function sender()
     {
